@@ -1,0 +1,3 @@
+KeyError in line 6 of /scratch/cridenour/Projects/Crystal/WNVHeppNextstrain/WNVHeppNextStrain/sample_processing/workflow/Snakefile:
+'/TGenNextGen/TGN-MiSeq1265/VECTR-WNV'
+  File "/scratch/cridenour/Projects/Crystal/WNVHeppNextstrain/WNVHeppNextStrain/sample_processing/workflow/Snakefile", line 6, in <module>
