@@ -1,0 +1,61 @@
+{
+  "title": "West Nile virus dispersal in the American Southwest",
+    "maintainers": [
+    {"name": "Chase Ridenour and Crystal Hepp", "url": "https://directory.nau.edu/person/cmh574"}
+  ],
+  "colorings": [
+    {
+      "key": "gt",
+      "title": "Genotype",
+      "type": "categorical"
+    },
+    {
+      "key": "num_date",
+      "title": "Date",
+      "type": "continuous"
+    },
+    {
+      "key": "author",
+      "title": "Author",
+      "type": "categorical"
+    },
+    {
+      "key": "country",
+      "title": "Sample_Name",
+      "type": "categorical"
+    },
+    {
+      "key": "state",
+      "title": "State",
+      "type": "categorical"
+    },
+    {
+      "key": "county",
+      "title": "County",
+      "type": "categorical"
+    },
+    {
+      "key": "vector_host",
+      "title": "Vector or Host",
+      "type": "categorical"
+    }
+
+  ],
+  "geo_resolutions": [
+    "country",
+    "state",
+    "county"
+  ],
+  "panels": [
+     "tree",
+     "map"
+  ],
+  "display_defaults": {
+    "map_triplicate": true
+  },
+  "filters": [
+    "country",
+    "state",
+    "county"
+  ]
+}

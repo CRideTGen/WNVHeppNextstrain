@@ -1,0 +1,13 @@
+---
+type: "Config file for read pipeline"
+
+#sequence_directory: "sequences"
+#symbolic_directory: "read_symbolic_links"
+#reference_genome: "sequences/reference/JQ685911"
+#output_directory: "OutputDirectory"
+
+sequence_directory: "temp_sequences"
+symbolic_directory: "read_symbolic_links"
+primer_file: "config/combined_adapter_primers.fasta"
+reference_genome: "config/WNVLineage1"
+output_directory: "OutputDirectory"

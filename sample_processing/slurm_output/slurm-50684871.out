@@ -1,0 +1,51 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Tue Apr  5 22:59:46 2022]
+rule trim_reads_bbduk:
+    input: read_symbolic_links/WNVxx91I6xxCtxxAZxx20210721.R1.fastq, read_symbolic_links/WNVxx91I6xxCtxxAZxx20210721.R2.fastq
+    output: OutputDirectory/trimmed_reads/WNVxx91I6xxCtxxAZxx20210721_R1.fastq, OutputDirectory/trimmed_reads/WNVxx91I6xxCtxxAZxx20210721_R2.fastq
+    jobid: 0
+    wildcards: output_dir=OutputDirectory, sample_name=WNVxx91I6xxCtxxAZxx20210721
+    resources: mem_mb=1000, disk_mb=1000, tmpdir=/tmp, memory=10000, time=00:5:00, cpus=1, ntasks=1
+
+
+input1: read_symbolic_links/WNVxx91I6xxCtxxAZxx20210721.R1.fastq
+input2: read_symbolic_links/WNVxx91I6xxCtxxAZxx20210721.R2.fastq
+sample name: WNVxx91I6xxCtxxAZxx20210721
+output1: WNVxx91I6xxCtxxAZxx20210721_R1.fastq
+output2: WNVxx91I6xxCtxxAZxx20210721_R2.fastq
+stats: WNVxx91I6xxCtxxAZxx20210721_stats.txt
+
+java -da -Xmx60g -Xms60g -cp /scratch/clr96/packages/src/bbmap/current/ jgi.BBDuk -Xmx60g -da in=read_symbolic_links/WNVxx91I6xxCtxxAZxx20210721.R1.fastq in2=read_symbolic_links/WNVxx91I6xxCtxxAZxx20210721.R2.fastq out=OutputDirectory/trimmed_reads/WNVxx91I6xxCtxxAZxx20210721_R1.fastq out2=OutputDirectory/trimmed_reads/WNVxx91I6xxCtxxAZxx20210721_R2.fastq outm=OutputDirectory/trimmed_reads/mismatch/WNVxx91I6xxCtxxAZxx20210721_R1_mismatch.fastq outm2=OutputDirectory/trimmed_reads/mismatch/WNVxx91I6xxCtxxAZxx20210721_R2_mismatch.fastq ref=config/combined_adapter_primers.fasta stats=OutputDirectory/trimmed_reads/stats/WNVxx91I6xxCtxxAZxx20210721_stats.txt statscolumns=5 ottm=t restrictleft=30 ordered=t k=7 minlen=80 ktrim=l edist=3 edist2=1 ftm=5 mink=5 copyundefined fixjunk
+Executing jgi.BBDuk [-Xmx60g, -da, in=read_symbolic_links/WNVxx91I6xxCtxxAZxx20210721.R1.fastq, in2=read_symbolic_links/WNVxx91I6xxCtxxAZxx20210721.R2.fastq, out=OutputDirectory/trimmed_reads/WNVxx91I6xxCtxxAZxx20210721_R1.fastq, out2=OutputDirectory/trimmed_reads/WNVxx91I6xxCtxxAZxx20210721_R2.fastq, outm=OutputDirectory/trimmed_reads/mismatch/WNVxx91I6xxCtxxAZxx20210721_R1_mismatch.fastq, outm2=OutputDirectory/trimmed_reads/mismatch/WNVxx91I6xxCtxxAZxx20210721_R2_mismatch.fastq, ref=config/combined_adapter_primers.fasta, stats=OutputDirectory/trimmed_reads/stats/WNVxx91I6xxCtxxAZxx20210721_stats.txt, statscolumns=5, ottm=t, restrictleft=30, ordered=t, k=7, minlen=80, ktrim=l, edist=3, edist2=1, ftm=5, mink=5, copyundefined, fixjunk]
+Version 38.34
+
+Set ORDERED to true
+maskMiddle was disabled because useShortKmers=true
+0.035 seconds.
+Initial:
+Memory: max=62277m, total=62277m, free=61246m, used=1031m
+
+Added 11800 kmers; time: 	130.206 seconds.
+Memory: max=62277m, total=62277m, free=60215m, used=2062m
+
+Input is being processed as paired
+Started output streams:	0.073 seconds.
+Processing time:   		4.015 seconds.
+
+Input:                  	106466 reads 		26722966 bases.
+FTrimmed:               	106466 reads (100.00%) 	106466 bases (0.40%)
+KTrimmed:               	106465 reads (100.00%) 	3123082 bases (11.69%)
+Total Removed:          	0 reads (0.00%) 	3229548 bases (12.09%)
+Result:                 	106466 reads (100.00%) 	23493418 bases (87.91%)
+
+Time:                         	134.356 seconds.
+Reads Processed:        106k 	0.79k reads/sec
+Bases Processed:      26722k 	0.20m bases/sec
+[Tue Apr  5 23:02:01 2022]
+Finished job 0.
+1 of 1 steps (100%) done

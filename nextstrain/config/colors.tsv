@@ -1,0 +1,46 @@
+source	Public	#4ef442
+source	Hepp	#8341f4
+		
+state	AZ	#FF0000
+state	BCNM	#FFFF00
+state	CA	#5784db
+state	CO	#AA00FF
+state	FL	#db5f57
+state	GA	#dbae57
+state	IL	#b9db57
+state	IN	#69db57
+state	LA	#57db94
+state	MD	#57d3db
+state	MI	#00EAFF
+state	MT	#7957db
+state	NE	#c957db
+state	NJ	#db579e
+state	NM	#d1c4c1
+state	NV	#a38984
+state	NY	#8a695a
+state	OH	#baa774
+state	SD	#e8e28d
+state	SONM	#d1f690
+state	TAMM	#75e37d
+state	TX	#15d06a
+state	UT	#00a8d0
+state	WA	#1470d6
+state	WI	#CFCFCC
+vector	NA	#808080
+vector	Aa	#FFA500
+host	MourninDove	#CC8899
+host	NA	#808080
+vector_host	Aa	#FFA500
+vector_host	MourningDove	#CC8899
+vector_host	NA	#808080
+county	MARICOPA	#FF0000
+county	SWMAC	#5722db
+county	CLARK	#AA00FF
+county	COAV	#5784db
+county	MTDOH	#dbFF57
+county	COCONINO	#EE9911
+county	WADOH	#b9db57
+county	Yuma	#69db57
+
+
+

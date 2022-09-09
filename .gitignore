@@ -1,0 +1,11 @@
+.snakemake
+sample_processing/.snakemake
+sample_processing/temp_sequences
+sample_processing/OutputDirectory/bamfiles
+sample_processing/OutputDirectory/trimmed_reads
+sample_processing/read_symbolic_links
+nextstrain/.snakemake
+nextstrain/sequences_aa_birds_06Dec2021
+nextstrain/sequences_new
+
+

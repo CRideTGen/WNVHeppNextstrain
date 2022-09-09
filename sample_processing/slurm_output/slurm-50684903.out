@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Tue Apr  5 23:05:46 2022]
+rule ivar_consensus:
+    input: OutputDirectory/bamfiles/WNVxx91I6xxCtxxAZxx20210721.sorted.bam, OutputDirectory/bamfiles/WNVxx91I6xxCtxxAZxx20210721.sorted.bam.bai
+    output: OutputDirectory/consensus/WNVxx91I6xxCtxxAZxx20210721.fa, OutputDirectory/consensus/WNVxx91I6xxCtxxAZxx20210721.qual.txt
+    jobid: 0
+    wildcards: output_dir=OutputDirectory, sample_name=WNVxx91I6xxCtxxAZxx20210721
+    resources: mem_mb=1000, disk_mb=1000, tmpdir=/tmp, memory=10000, time=00:05:00, cpus=1, ntasks=1
+
+[warning] samtools mpileup option `F` is functional, but deprecated. Please switch to using bcftools mpileup in future.
+[mpileup] 1 samples in 1 input files
+Minimum Quality: 10
+Threshold: 0.8
+Minimum depth: 10
+Regions with depth less than minimum depth covered by: N
+Reference length: 10902
+Positions with 0 depth: 0
+Positions with depth below 10: 150
+[Tue Apr  5 23:05:49 2022]
+Finished job 0.
+1 of 1 steps (100%) done

@@ -1,0 +1,58 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+
+[Tue Apr  5 22:58:57 2022]
+rule bowtie2:
+    input: OutputDirectory/trimmed_reads/WNVxx211960xxCqxxAZxx20210803_R1.fastq, OutputDirectory/trimmed_reads/WNVxx211960xxCqxxAZxx20210803_R2.fastq
+    output: OutputDirectory/temp_dir/WNVxx211960xxCqxxAZxx20210803.bam
+    jobid: 2
+    wildcards: output_dir=OutputDirectory, sample_name=WNVxx211960xxCqxxAZxx20210803
+    resources: mem_mb=1000, disk_mb=1000, tmpdir=/tmp, memory=10000, time=00:05:00, cpus=1, ntasks=1
+
+106542 reads; of these:
+  106542 (100.00%) were paired; of these:
+    74880 (70.28%) aligned concordantly 0 times
+    31662 (29.72%) aligned concordantly exactly 1 time
+    0 (0.00%) aligned concordantly >1 times
+    ----
+    74880 pairs aligned concordantly 0 times; of these:
+      1330 (1.78%) aligned discordantly 1 time
+    ----
+    73550 pairs aligned 0 times concordantly or discordantly; of these:
+      147100 mates make up the pairs; of these:
+        145042 (98.60%) aligned 0 times
+        2058 (1.40%) aligned exactly 1 time
+        0 (0.00%) aligned >1 times
+31.93% overall alignment rate
+[Tue Apr  5 22:59:43 2022]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Tue Apr  5 22:59:43 2022]
+rule samtools_sort:
+    input: OutputDirectory/temp_dir/WNVxx211960xxCqxxAZxx20210803.bam
+    output: OutputDirectory/bamfiles/WNVxx211960xxCqxxAZxx20210803.sorted.bam
+    jobid: 1
+    wildcards: output_dir=OutputDirectory, sample_name=WNVxx211960xxCqxxAZxx20210803
+    resources: mem_mb=1000, disk_mb=1000, tmpdir=/tmp, memory=10000, time=00:05:00, cpus=1, ntasks=1
+
+[Tue Apr  5 22:59:50 2022]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Tue Apr  5 22:59:50 2022]
+rule samtools_index:
+    input: OutputDirectory/bamfiles/WNVxx211960xxCqxxAZxx20210803.sorted.bam
+    output: OutputDirectory/bamfiles/WNVxx211960xxCqxxAZxx20210803.sorted.bam.bai
+    jobid: 0
+    wildcards: output_dir=OutputDirectory, sample_name=WNVxx211960xxCqxxAZxx20210803
+    resources: mem_mb=1000, disk_mb=1000, tmpdir=/tmp, memory=10000, time=00:05:00, cpus=1, ntasks=1
+
+[Tue Apr  5 22:59:51 2022]
+Finished job 0.
+3 of 3 steps (100%) done

@@ -1,0 +1,111 @@
+from snakemake.io import expand, temp, multiext
+from scripts import read_import_functions
+
+configfile: "config/read_pipeline.yaml"
+
+reference = config['reference_genome']
+sequence_dir = config['sequence_directory']
+symbolic_dir = config['symbolic_directory']
+output_dir = config['output_directory']
+primer_file = config['primer_file']
+
+forward_reads, reverse_reads = read_import_functions.get_sequence_reads(sequence_dir)
+
+read_import_functions.make_symbolic_links(forward_reads,symbolic_dir=symbolic_dir)
+read_import_functions.make_symbolic_links(reverse_reads,symbolic_dir=symbolic_dir)
+
+sample_names = [f"{i.name.split('_')[0]}" for i in forward_reads]
+
+rule all:
+    input:
+        expand("{output_dir}/consensus/{sample_name}{ext}",
+            output_dir=output_dir,
+            sample_name=sample_names,
+            ext=['.fa', '.qual.txt']
+        )
+
+
+rule trim_reads_bbduk:
+    input:
+        f_reads=multiext("read_symbolic_links/{sample_name}",".R1.fastq"),
+        r_reads=multiext("read_symbolic_links/{sample_name}",".R2.fastq")
+
+    resources:
+        memory=10000,
+        time='00:5:00',
+        cpus=1,
+        ntasks=1
+    params:
+        primer_file = primer_file
+    group: "trim reads"
+
+    output:
+        multiext("{output_dir}/trimmed_reads/{sample_name}","_R1.fastq","_R2.fastq")
+
+    shell:
+        "scripts/trimReads.sh -f {input.f_reads} -r {input.r_reads} -p {params.primer_file} -o {output_dir}/trimmed_reads"
+
+
+rule bowtie2:
+    input:
+        forward_read="{output_dir}/trimmed_reads/{sample_name}_R1.fastq",
+        reverse_read="{output_dir}/trimmed_reads/{sample_name}_R2.fastq"
+    group: "align and sort"
+    resources:
+        memory=10000,
+        time='00:05:00',
+        cpus=1,
+        ntasks=1
+    output:
+        temp("{output_dir}/temp_dir/{sample_name}.bam")
+
+    shell:
+        "module load bowtie2; module load samtools; "
+        "bowtie2 -x {reference}  -1 {input.forward_read} -2 {input.reverse_read} | "
+        "samtools view -bS - > {output}"
+
+rule samtools_sort:
+    input:
+        "{output_dir}/temp_dir/{sample_name}.bam"
+    group: "align and sort"
+    resources:
+        memory=10000,
+        time='00:05:00',
+        cpus=1,
+        ntasks=1
+    output:
+        "{output_dir}/bamfiles/{sample_name}.sorted.bam"
+    shell:
+        "module load samtools; samtools sort -O bam {input} > {output}"
+
+rule samtools_index:
+    input:
+        "{output_dir}/bamfiles/{sample_name}.sorted.bam"
+    group: "align and sort"
+    resources:
+        memory=10000,
+        time='00:05:00',
+        cpus=1,
+        ntasks=1
+    output:
+        "{output_dir}/bamfiles/{sample_name}.sorted.bam.bai"
+    shell:
+        "module load samtools; samtools index {input} {output}"
+
+
+rule ivar_consensus:
+    input:
+        bams="{output_dir}/bamfiles/{sample_name}.sorted.bam",
+        indexs="{output_dir}/bamfiles/{sample_name}.sorted.bam.bai"
+    group: "consensus"
+    resources:
+        memory=10000,
+        time='00:05:00',
+        cpus=1,
+        ntasks=1
+    output:
+        multiext("{output_dir}/consensus/{sample_name}",'.fa','.qual.txt')
+    shell:
+        "module load samtools;"
+        "samtools mpileup -A -d 100000 -Q 0 -F 0 {input.bams} | "
+        "ivar consensus -t 0.8 -n 'N' -q 10 -m 10 -p {wildcards.output_dir}/consensus/{wildcards.sample_name}"
