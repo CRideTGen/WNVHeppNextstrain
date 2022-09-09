@@ -3,7 +3,7 @@ from WNVHeppNextStrain.sample_processing.scripts import read_import_functions
 
 configfile: "config/read_pipeline.yaml"
 
-reference = config['/TGenNextGen/TGN-MiSeq1265/VECTR-WNV']
+reference = config['reference_genome']
 sequence_dir = config['sequence_directory']
 symbolic_dir = config['symbolic_directory']
 output_dir = config['output_directory']

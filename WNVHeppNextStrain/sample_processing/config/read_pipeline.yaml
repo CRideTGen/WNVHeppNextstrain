@@ -6,7 +6,7 @@ type: "Config file for read pipeline"
 #reference_genome: "sequences/reference/JQ685911"
 #output_directory: "OutputDirectory"
 
-sequence_directory: "temp_sequences"
+sequence_directory: "/TGenNextGen/TGN-MiSeq1265/VECTR-WNV"
 symbolic_directory: "read_symbolic_links"
 primer_file: "config/combined_adapter_primers.fasta"
 reference_genome: "config/WNVLineage1"
