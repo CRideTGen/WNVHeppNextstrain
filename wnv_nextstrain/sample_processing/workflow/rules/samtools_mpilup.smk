@@ -5,9 +5,9 @@ rule mpilup:
         indexs = "{output_dir}/mapped/{sample_name}.sorted.bam.bai",
         reference_genome={reference},
     output:
-        "{output_dir}/mpilup/{sample}.mpilup.gz",
+        "{output_dir}/mpilup/{sample_name}.mpilup.gz",
     log:
-        "{output_dir}/logs/samtools/mpileup/{sample}.log",
+        "{output_dir}/logs/samtools/mpileup/{sample_name}.log",
     params:
         extra="-A -d 100000 -Q 0 -F 0"
     wrapper:
