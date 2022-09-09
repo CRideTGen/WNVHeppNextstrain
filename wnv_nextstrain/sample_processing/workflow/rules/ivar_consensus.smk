@@ -1,7 +1,6 @@
 rule ivar_consensus:
     input:
-        mpilup="{output_dir}/mpilup/{sample_name}.mpilup.gz",
-        indexs="{output_dir}/mapped/{sample_name}.sorted.bam.bai"
+        mpilup="{output_dir}/mpilup/{sample_name}.mpilup.gz"
     group: "consensus"
     resources:
         memory=10000,

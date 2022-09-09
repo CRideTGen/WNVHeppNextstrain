@@ -1,7 +1,8 @@
 rule mpilup:
     input:
         # single or list of bam files
-        bam="{output_dir}/mapped/{sample}.sorted.bam",
+        bam="{output_dir}/mapped/{sample_name}.sorted.bam",
+        indexs = "{output_dir}/mapped/{sample_name}.sorted.bam.bai",
         reference_genome={reference},
     output:
         "{output_dir}/mpilup/{sample}.mpilup.gz",
