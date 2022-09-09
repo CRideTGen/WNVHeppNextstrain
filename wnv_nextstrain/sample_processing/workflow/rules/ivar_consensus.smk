@@ -8,6 +8,6 @@ rule ivar_consensus:
         cpus=1,
         ntasks=1
     output:
-        multiext("{output_dir}/consensus/{sample_name}",'.fa','.qual.txt')
+        multiext("{output_dir}/consensus/{sample_name}",".fa",".qual.txt")
     shell:
         "gunzip -c {input.mpilup} | ivar consensus -t 0.8 -n 'N' -q 10 -m 10 -p {wildcards.output_dir}/consensus/{wildcards.sample_name}"

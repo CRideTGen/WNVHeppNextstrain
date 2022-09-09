@@ -8,7 +8,7 @@ rule bowtie2_build:
         ntasks=1,
     output:
         multiext(
-            "{output_dir}/rerence_build/sdsi_reference",
+            "{output_dir}/rerence_build/WNVLineage1",
             ".1.bt2",
             ".2.bt2",
             ".3.bt2",
@@ -28,7 +28,7 @@ rule bowtie2:
     input:
         sample=["{output_dir}/trimmed_reads/{sample_name}_1.fastq", "{output_dir}/trimmed_reads/{sample_name}_2.fastq"],
         idx=multiext(
-            "{output_dir}/rerence_build/sdsi_reference",
+            "{output_dir}/rerence_build/WNVLineage1",
             ".1.bt2",
             ".2.bt2",
             ".3.bt2",

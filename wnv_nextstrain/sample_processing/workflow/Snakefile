@@ -6,14 +6,16 @@ include: "rules/trim_reads_bbduk.smk"
 include: "rules/bowtie2.smk"
 include: "rules/samtools_sort.smk"
 include: "rules/samtools_index.smk"
-incluse: "rules/ivar_consensus.smk"
+include: "rules/samtools_mpilup.smk"
+include: "rules/ivar_consensus.smk"
 
 rule all:
     input:
         expand("{output_dir}/consensus/{sample_name}{ext}",
             output_dir=output_dir,
             sample_name=sample_names,
-            ext=['.fa', '.qual.txt']
+            ext=[".fa",".qual.txt"]
         )
+
 
 
