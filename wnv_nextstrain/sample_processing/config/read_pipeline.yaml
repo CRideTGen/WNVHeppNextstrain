@@ -1,0 +1,7 @@
+---
+type: "Config file for read pipeline"
+
+sequence_directory: "/TGenNextGen/TGN-MiSeq1265/VECTR-WNV"
+adapter_file: "config/combined_adapter_primers.fasta"
+reference_genome: "config/WNVLineage1"
+output_directory: "OutputDirectory"

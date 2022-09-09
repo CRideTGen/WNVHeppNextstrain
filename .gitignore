@@ -1,11 +1,11 @@
-WNVHeppNextStrain/.snakemake
-WNVHeppNextStrain/sample_processing/.snakemake
-WNVHeppNextStrain/sample_processing/temp_sequences
-WNVHeppNextStrain/sample_processing/OutputDirectory/bamfiles
-WNVHeppNextStrain/sample_processing/OutputDirectory/trimmed_reads
-WNVHeppNextStrain/sample_processing/read_symbolic_links
-WNVHeppNextStrain/nextstrain/.snakemake
-WNVHeppNextStrain/nextstrain/sequences_aa_birds_06Dec2021
-WNVHeppNextStrain/nextstrain/sequences_new
+wnv_nextstrain/.snakemake
+wnv_nextstrain/sample_processing/.snakemake
+wnv_nextstrain/sample_processing/temp_sequences
+wnv_nextstrain/sample_processing/OutputDirectory/bamfiles
+wnv_nextstrain/sample_processing/OutputDirectory/trimmed_reads
+wnv_nextstrain/sample_processing/read_symbolic_links
+wnv_nextstrain/nextstrain/.snakemake
+wnv_nextstrain/nextstrain/sequences_aa_birds_06Dec2021
+wnv_nextstrain/nextstrain/sequences_new
 
 
