@@ -1,16 +1,11 @@
-strain,insertion: 32bp @ ref pos 0,insertion: 2bp @ ref pos 790,insertion: 49bp @ ref pos 1763,insertion: 2bp @ ref pos 2008,insertion: 6bp @ ref pos 2025,insertion: 10bp @ ref pos 2107,insertion: 3bp @ ref pos 2121,insertion: 1bp @ ref pos 2434,insertion: 2bp @ ref pos 2872,insertion: 4bp @ ref pos 2938,insertion: 15bp @ ref pos 2950,insertion: 8bp @ ref pos 2959,insertion: 103bp @ ref pos 2971,insertion: 4bp @ ref pos 3540,insertion: 5bp @ ref pos 3734,insertion: 13bp @ ref pos 4246,insertion: 9bp @ ref pos 4460,insertion: 10bp @ ref pos 4474,insertion: 2bp @ ref pos 4839,insertion: 2bp @ ref pos 5535,insertion: 82bp @ ref pos 5937,insertion: 2bp @ ref pos 6376,insertion: 17bp @ ref pos 6750,insertion: 9bp @ ref pos 7030,insertion: 99bp @ ref pos 7309,insertion: 6bp @ ref pos 8030,insertion: 2bp @ ref pos 8036,insertion: 6bp @ ref pos 8417,insertion: 72bp @ ref pos 9124,insertion: 1bp @ ref pos 9143,insertion: 1bp @ ref pos 9224,insertion: 2bp @ ref pos 9231,insertion: 12bp @ ref pos 9610,insertion: 3bp @ ref pos 9632,insertion: 5bp @ ref pos 9751,insertion: 1bp @ ref pos 9893,insertion: 1bp @ ref pos 9965,insertion: 9bp @ ref pos 9974,insertion: 7bp @ ref pos 10388,insertion: 5bp @ ref pos 10506,insertion: 143bp @ ref pos 10530
-WNVxx3254xxCtxxCAxx20210818,CAATATGGAGGCGGCCAACCCAACTG,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WNVxx19H0xxCqxxAZxx20210721,,,RHGWSRM,,,,,M,,,,,,,,,,,,,,,,,,,,,,,,,,,H,,,G,,,
-WNV_9C39_Cq_AZ_20210604,,,,,GGCA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WNVxx2111819xxCqxxAZxx20210923,,,,,,,GMT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-WNVxx21472xxCqxxAZxx20210728,,,,,,,,,,AT,,,,,,,TGAT,,,,,,,,,,,,,,,,,,,,,,ATGTTGS,,
-WNVxxPCPH2022001xxCqxxAZxx20220810,,,,,,,,,,,GTCT,GC,,,,,,,,,,,TG,,,,,,,,,,,,,,,,,,
-WNVxx21494xxCqxxAZxx20210803,,,,,,,,,,,,,,,,AC,,,,,,,,,TCGCT,,,,,,,,,,,,A,ACTGAATGG,,,
-WNVxx9C52xxCtxxAZxx20210714,,,,,,,,,,,,,,,,,,CC,,,,,,,,,,,,,,,,,,,,,,,
-WNV_9A07_C2_Cq_AZ_05.17.19_2019.378494,,,,,,,,,,,,,,,,,,,,,,AA,,,,,,,,,,,,,,,,,,,
-WNV_22115zSGE012_Ct_UT_08.13.13_2013.616438,,,,,,,,,,,,,,,,,,,,,,,,,,,,MKGTTG,,,,,,,,,,,,,
-WNV_Q268_G9_Cq_AZ_04.11.19_2019.279929,,,,,,,,,,,,,,,,,,,,,,,,,,,,,GAAT,,,,,,,,,,,,
-WNV_Q227_B5_Cq_AZ_04.11.19_2019.279929,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,G,,,,,,,,,,
-WNVxx211812xxCqxxAZxx20210727,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,TGACTTGGAAAA,CTT,,,,,,,
-WNVxx21985xxCqxxAZxx20210729,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,TTA,,,,,,,,
-WNVxx3567xxCtxxCAxx20210831,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,G
+strain,insertion: 32bp @ ref pos 0,insertion: 2bp @ ref pos 658,insertion: 2bp @ ref pos 790,insertion: 21bp @ ref pos 1857,insertion: 10bp @ ref pos 2107,insertion: 3bp @ ref pos 2121,insertion: 1bp @ ref pos 2434,insertion: 2bp @ ref pos 2872,insertion: 4bp @ ref pos 2938,insertion: 71bp @ ref pos 2950,insertion: 8bp @ ref pos 2959,insertion: 4bp @ ref pos 3540,insertion: 5bp @ ref pos 3734,insertion: 13bp @ ref pos 4246,insertion: 9bp @ ref pos 4460,insertion: 10bp @ ref pos 4474,insertion: 2bp @ ref pos 4839,insertion: 2bp @ ref pos 5535,insertion: 82bp @ ref pos 5937,insertion: 2bp @ ref pos 6376,insertion: 17bp @ ref pos 6750,insertion: 9bp @ ref pos 7030,insertion: 136bp @ ref pos 7240,insertion: 6bp @ ref pos 8030,insertion: 2bp @ ref pos 8036,insertion: 1bp @ ref pos 9143,insertion: 2bp @ ref pos 9231,insertion: 4bp @ ref pos 9595,insertion: 11bp @ ref pos 9610,insertion: 1bp @ ref pos 9623,insertion: 3bp @ ref pos 9632,insertion: 5bp @ ref pos 9751,insertion: 1bp @ ref pos 9893,insertion: 1bp @ ref pos 9965,insertion: 9bp @ ref pos 9974,insertion: 7bp @ ref pos 10388,insertion: 5bp @ ref pos 10506,insertion: 21bp @ ref pos 10530
+WNVxx3254xxCtxxCAxx20210818,CAATATGGAGGCGGCCAACCCAACTG,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WNVxx2111824xxCtxxAZxx20210923,,,,GTC,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WNVxx2111819xxCqxxAZxx20210923,,,,,,GMT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WNVxx19H0xxCqxxAZxx20210721,,,,,,,M,,,,,,,,,,,,,,,,,,,,,,,,,H,,,G,,,
+WNVxx21472xxCqxxAZxx20210728,,,,,,,,,AT,,,,,,TGAT,,,,,,,,,,,,,,,,,,,,,ATGTTGS,,
+WNVxxPCPH2022001xxCqxxAZxx20220810,,,,,,,,,,GTCT,GC,,,,,,,,,,TG,,,,,,,,,,,,,,,,,
+WNVxx21494xxCqxxAZxx20210803,,,,,,,,,,,,,,AC,,,,,,,,,,,,,,,,,,,,A,ACTGAATGG,,,
+WNVxx9C52xxCtxxAZxx20210714,,,,,,,,,,,,,,,,CC,,,,,,,,,,,,,,,,,,,,,,
+WNVxx211812xxCqxxAZxx20210727,,,,,,,,,,,,,,,,,,,,,,,,,,,,,TGACTTGGAAA,G,CTT,,,,,,,
+WNVxx3567xxCtxxCAxx20210831,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,G

@@ -1,6 +1,4 @@
-rule all:
-    input:
-        auspice_json = "auspice/wnv.json",
+
 
 input_fasta = "data/sequences.fasta",
 input_metadata = "data/metadata.tsv",
@@ -10,54 +8,28 @@ colors = "config/colors.tsv",
 lat_longs = "config/lat_longs.tsv",
 auspice_config = "config/auspice_config.json"
 
-rule index_sequences:
-    threads: 2
-    message:
-        """
-        Creating an index of sequence composition for filtering.
-        """
+
+rule all:
     input:
-        sequences = input_fasta
+        # "results/filtered.fasta"
+        auspice_json = "auspice/wnv.json",
+
+
+
+rule filter:
+    input:
+        seq = input_fasta,
+        meta = input_metadata,
+        exclude = dropped_strains
     output:
-        sequence_index = "results/sequence_index.tsv"
+        sequences = "results/filtered.fasta"
     shell:
         """
-        augur index \
-            --sequences {input.sequences} \
-            --output {output.sequence_index}
+        augur filter --sequences {input.seq} \
+            --metadata {input.meta} \
+            --exclude {input.exclude} \
+            --output {output}
         """
-
-# rule filter:
-#     message:
-#         """
-#         Filtering to
-#           - {params.sequences_per_group} sequence(s) per {params.group_by!s}
-#           - from {params.min_date} onwards
-#           - excluding strains in {input.exclude}
-#         """
-#     input:
-#         sequences = input_fasta,
-#         sequence_index = "results/sequence_index.tsv",
-#         metadata = input_metadata,
-#         exclude = dropped_strains
-#     output:
-#         sequences = "results/filtered.fasta"
-#     params:
-#         group_by = "country year month",
-#         sequences_per_group = 20,
-#         min_date = 2012
-#     shell:
-#         """
-#         augur filter \
-#             --sequences {input.sequences} \
-#             --sequence-index {input.sequence_index} \
-#             --metadata {input.metadata} \
-#             --exclude {input.exclude} \
-#             --output {output.sequences} \
-#             --group-by {params.group_by} \
-#             --sequences-per-group {params.sequences_per_group} \
-#             --min-date {params.min_date}
-#         """
 
 rule align:
     message:
@@ -66,7 +38,7 @@ rule align:
           - filling gaps with N
         """
     input:
-        sequences = input_fasta,
+        sequences = rules.filter.output.sequences,
         reference = reference
     output:
         alignment = "results/aligned.fasta"
@@ -178,7 +150,7 @@ rule traits:
         node_data = "results/traits.json",
     threads: 20
     params:
-        columns = "country"
+        columns = ["location","state", "county"]
     shell:
         """
         augur traits \
@@ -212,7 +184,7 @@ rule export:
             --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.aa_muts} \
             --colors {input.colors} \
             --lat-longs {input.lat_longs} \
-            --auspice-config {input.auspice_config} \
+            --auspice {input.auspice_config} \
             --output {output.auspice_json}
         """
 

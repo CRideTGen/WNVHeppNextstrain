@@ -33,14 +33,14 @@ host	NA	#808080
 vector_host	Aa	#FFA500
 vector_host	MourningDove	#CC8899
 vector_host	NA	#808080
-county	MARICOPA	#FF0000
+county	MARICOPA	#ed4328
 county	SWMAC	#5722db
 county	CLARK	#AA00FF
-county	COAV	#5784db
-county	MTDOH	#dbFF57
+county	RIVERSIDE	#5784db
+county	MTDOH	#0a635d
 county	COCONINO	#EE9911
-county	WADOH	#b9db57
-county	Yuma	#69db57
-
+county	WADOH	#635d0a
+county	YUMA	#63100a
+county	PINAL	#74de54
 
 
