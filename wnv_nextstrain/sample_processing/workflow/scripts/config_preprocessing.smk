@@ -4,13 +4,13 @@ from wnv_nextstrain.sample_processing.workflow.scripts.parse_sample_sheet import
 
 
 def get_sample_pairs(wildcards):
-    forward_reads = next(sequence_dir.glob(f"**/*{wildcards.sample_name}_*R1*fastq*"))
-    reverse_reads = next(sequence_dir.glob(f"**/*{wildcards.sample_name}_*R2*fastq*"))
+    forward_reads = next(sequence_dir.glob(f"VECTR*/*{wildcards.sample_name}*R1*fastq*")).resolve()
+    reverse_reads = next(sequence_dir.glob(f"VECTR*/*{wildcards.sample_name}*R2*fastq*")).resolve()
 
     return [forward_reads, reverse_reads]
 
 
-configfile: "config/read_pipeline.yaml"
+# configfile: "config/read_pipeline.yaml"
 
 reference = config["reference_genome"]
 sequence_dir = pathlib.Path(config["sequence_directory"])

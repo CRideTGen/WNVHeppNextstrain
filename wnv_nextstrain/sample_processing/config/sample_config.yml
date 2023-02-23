@@ -1,0 +1,5 @@
+reference_genome: "/scratch/cridenour/Projects/VECTR/WNVHeppNextstrain/wnv_nextstrain/sample_processing/config/WNVLineage1.fasta"
+sequence_directory: "/scratch/cridenour/Projects/VECTR/WNVHeppNextstrain/wnv_nextstrain/sample_processing/TGN-NovaSeq0008-retry"
+output_directory: "Output_NovaSeq008-retry"
+adapter_file: "/scratch/cridenour/Projects/VECTR/WNVHeppNextstrain/wnv_nextstrain/sample_processing/config/combined_adapter_primers.fasta"
+

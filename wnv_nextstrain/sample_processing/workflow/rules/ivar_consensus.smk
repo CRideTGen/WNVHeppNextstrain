@@ -1,6 +1,6 @@
 rule ivar_consensus:
     input:
-        mpilup="{output_dir}/mpilup/{sample_name}.mpilup.gz"
+        bam="{output_dir}/mapped/{sample_name}.sorted.bam"
     group: "consensus"
     resources:
         memory=10000,
@@ -10,4 +10,4 @@ rule ivar_consensus:
     output:
         multiext("{output_dir}/consensus/{sample_name}",".fa",".qual.txt")
     shell:
-        "gunzip -c {input.mpilup} | ivar consensus -t 0.8 -n 'N' -q 10 -m 10 -p {wildcards.output_dir}/consensus/{wildcards.sample_name}"
+        "samtools mpileup -aa -A -d 0 -Q 0 {input.bam} | ivar consensus -t 0.8 -n 'N' -q 10 -m 10 -p {wildcards.output_dir}/consensus/{wildcards.sample_name}"

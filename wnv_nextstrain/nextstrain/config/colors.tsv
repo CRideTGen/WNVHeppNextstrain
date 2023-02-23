@@ -31,6 +31,8 @@ vector	Aa	#FFA500
 host	MourninDove	#CC8899
 host	NA	#808080
 vector_host	Aa	#FFA500
+vector_host	Ct	#EE0000
+vector_host	Cq	#1470d6
 vector_host	MourningDove	#CC8899
 vector_host	NA	#808080
 county	MARICOPA	#ed4328

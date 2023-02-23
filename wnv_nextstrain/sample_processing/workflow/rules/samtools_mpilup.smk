@@ -15,6 +15,6 @@ rule mpilup:
     log:
         "{output_dir}/logs/samtools/mpileup/{sample_name}.log",
     params:
-        extra="-A -d 100000 -Q 0 -F 0"
+        extra="-aa -A -d 0 -Q 0"
     wrapper:
         "v1.12.2/bio/samtools/mpileup"
