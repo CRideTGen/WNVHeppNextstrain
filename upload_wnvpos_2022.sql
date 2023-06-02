@@ -1,3 +1,4 @@
+
 drop table if exists sequencing.wnv_pos_2022;
 create table if not exists sequencing.wnv_pos_2022
 (

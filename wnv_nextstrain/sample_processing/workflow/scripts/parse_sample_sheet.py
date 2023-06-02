@@ -6,7 +6,6 @@ from pydantic import BaseModel, ValidationError, validator
 from typing import Optional, Union
 
 FIELDNAMES = [
-        'lane',
     'sample_id',
     'sample_name',
     'sample_plate',
@@ -68,15 +67,15 @@ def read_sample_sheet(input_dir: pathlib.Path, fieldnames: list) -> dict[str, Sa
         for row in reader:
             sample_name = row["sample_name"]
             sdsi_name = row["description"]
+            if 'wnv' in sample_name.lower() and 'WNV_WNVxxMCVCxx2217187xxCtxxAZxx20220927'.lower() not in sample_name.lower():
+                sample = Sample(sample_name=sample_name,
+                                sdsi=sdsi_name)
 
-            sample = Sample(sample_name=sample_name,
-                            sdsi=sdsi_name)
-
-            sample_dict[sample_name] = sample
+                sample_dict[sample_name] = sample
 
         return sample_dict
 
 
 if __name__ == "__main__":
-    x = read_sample_sheet(pathlib.Path('/scratch/cridenour/Projects/VECTR/WNVHeppNextstrain/wnv_nextstrain/sample_processing/TGN-NovaSeq0008'), fieldnames=FIELDNAMES)
+    x = read_sample_sheet(pathlib.Path('/TGenNextGen/TGN-NextSeq1k_0005/'), fieldnames=FIELDNAMES)
     print(x)
